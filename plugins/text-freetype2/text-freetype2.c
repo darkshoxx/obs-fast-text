@@ -272,7 +272,7 @@ static void ft2_video_tick(void *data, float seconds)
 	if (!srcdata->from_file || !srcdata->text_file)
 		return;
 
-	if (os_gettime_ns() - srcdata->last_checked >= 1000000000) {
+	if (os_gettime_ns() - srcdata->last_checked >= 100000000) {
 		time_t t = get_modified_timestamp(srcdata->text_file);
 		srcdata->last_checked = os_gettime_ns();
 
